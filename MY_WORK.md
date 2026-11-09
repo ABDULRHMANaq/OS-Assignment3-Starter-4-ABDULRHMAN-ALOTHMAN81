@@ -302,11 +302,33 @@ I got a NullPointerException and a NoSuchElementException when i ran the origina
 
 Verification block of the **original starter**:
 ```
+Exception in thread "CPU-4"
+java.lang.NullPointerException
+at ReadyQueue.snapshot(SchedulerSimulationSync.java:152)
+
+Exception in thread "CPU-1"
+java.util.NoSuchElementException
+at ReadyQueue.poll(SchedulerSimulationSync.java:139)
+
+═══ VERIFICATION (expected values are computed from YOUR seed) ═══
+Context switches (quanta executed)     expected 35       observed 0        MISMATCH
+Completed processes                    expected 18       observed 0        MISMATCH
+Total service time (ms)                expected 73632    observed 0        MISMATCH
+Busy-waiting polls (must be 0)         expected 0        observed 0
+
+At least one check failed (see the ✘ lines above): a race condition or busy waiting is still present.
 [Paste the verification block (or the exception/watchdog message) of the starter here]
 ```
 
 Verification block of **my final version**:
 ```
+═══ VERIFICATION (expected values are computed from YOUR seed) ═══
+Context switches (quanta executed)     expected 35       observed 35       ✔
+Completed processes                    expected 18       observed 18       ✔
+Total service time (ms)                expected 73632    observed 73632    ✔
+Busy-waiting polls (must be 0)         expected 0        observed 0        ✔
+
+✔ All shared values are consistent.
 [Paste the verification block of your final version here (all lines ✔)]
 ```
 
@@ -321,12 +343,18 @@ Verification block of **my final version**:
 
 **Your Answer:** *(3-5 sentences)*
 
-[Write your answer here.]
+[I have used ReentrantLock to guard the shared data in my program. I added one lock for the ready queue and one lock for the shared statistics The locks stop different CPUs from changing the same data at the same time i went with ReentrantLock as it gives more control with lock() and unlock()This adds safety to the program and prevents race conditions]
 
-| Critical section (variable / method) | Lock used | Why it needs protection |
+|| Critical section (variable / method) | lock used | Why it needs protection |
 |---|---|---|
-| [e.g., `ReadyQueue.poll()`] | [lock name] | [reason] |
-| [...] | [...] | [...] |
+| ReadyQueue.add() | ReadyQueue.lock | Protects the shared list and map. |
+| ReadyQueue.poll() | ReadyQueue.lock | Prevents CPUs from removing the same process. |
+| ReadyQueue.processOf() | ReadyQueue.lock | Protects access to the shared map. |
+| ReadyQueue.snapshot() | ReadyQueue.lock | Protects the queue while reading it. |
+| SharedStats.incrementContextSwitch() | SharedStats.lock | Prevents lost updates. |
+| SharedStats.incrementCompletedProcess() | SharedStats.lock | Protects the completed process counter. |
+| SharedStats.addServiceTime() | SharedStats.lock | Protects the total service time. |
+| SharedStats getters | SharedStats.lock | Protects reads of shared values. |
 
 ## Question 3: Busy Waiting vs Semaphore
 
