@@ -298,7 +298,7 @@
 
 **Your Answer:** *(3-5 sentences)*
 
-[Write your answer here.]
+I got a NullPointerException and a NoSuchElementException when i ran the original code. Multiple CPU attempted to access the ready queue simultaneously with no lock. The verification showed 0 context switches and 0 processes completed instead of 35 and 18 respectively Without RaceWindow, it is harder to detect the race condition as it occurs very fast and depends on CPU timing
 
 Verification block of the **original starter**:
 ```
