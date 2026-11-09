@@ -158,16 +158,16 @@
 
 ---
 
-### Entry 3 - [Date and Time]
-**What I did**:
+### Entry 3 - [8nov]
+**removed busy waiting**:
 
-**Details**:
+**use semphore to make cpu wait**:
 
-**Challenges**:
+**cpu kept checking empty queu**:
 
-**Solution**:
+**use acquire and release**:
 
-**Time spent**:
+**1 hou**:
 
 ---
 
@@ -240,7 +240,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[I learned that if you have multiple CPU working at the same time, synchronization is important Without it  you can get race conditions i used a ReentrantLock to protect the shared data This lets only one cpu access a critical section at a time I also learned how Semaphore helps the CPU wait without wasting time Synchronization makes the program more accurate and secure]
 
 ## Question 2: What was the most challenging part of this assignment?
 
@@ -248,7 +248,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[But the hardest part was getting rid of the race conditions Several CPUs read the same data at the same time This created problems with the shared values At first I didn't know where to put the locks i had to look very carefully at the code to find the critical sections Once the locks were added the shared values were right]
 
 ## Question 3: How did you overcome the challenges you faced?
 
@@ -256,7 +256,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[I tackled the problems one by one First i looked at the code for errors Then i added a ReentrantLock to protect the shared data I also used Semaphore to avoid busy waiting Then i ran the program to see what the results are Finally all tests for verification were passed]
 
 ## Question 4: Where can synchronization concepts be applied in real-world applications?
 
@@ -264,7 +264,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[There are many real world applications for synchronization For example banks use it when lots of people transfer money at the same time it helps to avoid mistakes in account balances it can be also used in the ticket booking system Synchronization also ensures that two people cannot book the same seat at the same time This enhances the accuracy and reliability of the systems]
 
 ### Optional: What would you like to learn more about?
 
