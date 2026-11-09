@@ -132,29 +132,29 @@
 
 ## Your Development Log
 
-### Entry 1 - [Date and Time]
-**What I did**:
+### Entry 1 - [5 nov]
+**completed feature1 add locks to shared ready queue**:
 
-**Details**:
+**i used reentranlook to protect shred data**:
 
-**Challenges**:
+**multiple cpu accessing the same data**:
 
-**Solution**:
+**used lock and unlock**:
 
-**Time spent**:
+** 1hou**:
 
 ---
 
-### Entry 2 - [Date and Time]
-**What I did**:
+### Entry 2 - [7nov]
+**protected shared statistics**:
 
-**Details**:
+**used reentrantlock for shared counters**:
 
-**Challenges**:
+**multiple cpu updating the same value**:
 
-**Solution**:
+**used lock and unlock**:
 
-**Time spent**:
+**1.3 hou**:
 
 ---
 
