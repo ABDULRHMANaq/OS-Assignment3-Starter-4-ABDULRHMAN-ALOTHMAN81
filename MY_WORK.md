@@ -364,7 +364,7 @@ Busy-waiting polls (must be 0)         expected 0        observed 0        ✔
 
 **Your Answer:** *(3-5 sentences)*
 
-[Write your answer here.]
+[WThe original code had CPU check the ready queue even when it was empty This is called busy waiting and it wastes CPU time i used Semaphore to force CPUs to wait for a process to be ready The semaphore waits with acquireUninterruptibly() and releases() when a process is add The value of busywaiting polls in my final output is 0]
 
 ## Question 4: Classical Problems and Deadlock
 
@@ -372,27 +372,34 @@ Busy-waiting polls (must be 0)         expected 0        observed 0        ✔
 
 > 💡 **TIP:** Recall the bounded-buffer solution of the slides (`empty`, `full`, `mutex`) and the order of `wait()` calls in the producer and the consumer. For the deadlock, think about a producer that holds the mutex while waiting for a free slot that only a consumer (who needs the mutex) can create.
 
-**Your Answer:** *(3-5 sentences)*
+**My program is analogous to the producerconsumer problem The producer puts processes in the ready queue  The CPU are the consumers  i used a Semaphore to make the CPU wait if the queue is empty If the CPU holding the queue lock is waiting on the semaphore then a deadlock can occur To prevent this the CPU has to wait for the semaphore before locking the queue.:** *(3-5 sentences)*
 
 **Classical problem and roles**:
-[Name the problem; who is the producer, who is the consumer?]
+[Problem: Producer-Consumer (Bounded buffer)
+Producer: The thread that enqueues processes to the ready queue.
+Consumer: threads of the CPU that take processes out of the ready queue.]
 
 **Semaphores for a bounded queue (name and initial value)**:
-[Name the three semaphores and their initial values.]
+[empty = N (queue capacity)
+full = 0
+mutex = 1]
 
 **Deadlock scenario and prevention**:
-[Describe the scenario and the necessary condition you would break.]
+[The CPU holds the queue lock and waits on the semaphore
+The producer needs the same lock to add a process 
+Both threads can not continue  Deadlock
+To avoid this the CPU has to wait for the semaphore before locking the queue]
 
 ## Summary
 
 **Key concepts I understood through these questions:**
-1.
-2.
-3.
+1. Race conditions and how to avoid them using locks
+2. How Semaphores help CPUs to wait without busy waiting.
+3. How to avoid deadlock and when it can occur.
 
 **Concepts I need to study more:**
-1.
-2.
+1. Bounded waiting and granularity of locks.
+2. The Producer-Consumer problem and its semaphores.
 
 ---
 
