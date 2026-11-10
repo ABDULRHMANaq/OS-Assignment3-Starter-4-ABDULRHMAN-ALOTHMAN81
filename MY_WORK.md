@@ -32,8 +32,8 @@
 
 | Field | Your Answer |
 |-------|-------------|
-| **Full Name** | [Write your full name here] |
-| **Student ID** | [Write your student ID here] |
+| **Full Name** | [ABDULRHMAN ALOTHMAN] |
+| **Student ID** | [445050148] |
 | **University Email** | [yourid]@std.psau.edu.sa |
 | **GitHub Username** | [your-github-username] |
 | **Repository Link** | [Paste your repository link here] |
@@ -42,7 +42,7 @@
 
 ## 🎥 Video Link
 
-**Video Link**: [Paste your video link here]
+**Video Link**: [[Paste your video link here](https://drive.google.com/file/d/1GY_HrxhPIYIadhELFSZ7Cw_4rVKzUWSM/view?usp=sharing)]
 
 > ⚠️ **WARNING:** The video must be **publicly accessible** ("Anyone with the link can view") on **Google Drive**, **YouTube (Unlisted or Public)** or any other cloud file-sharing system. A private, restricted or broken link counts as a **missing video (-1 mark)**.
 >
@@ -85,7 +85,8 @@
 | 4 | Feature 3: Semaphore | `Feature 3: Replaced busy waiting with a counting semaphore` |
 | 5 | Development log entries | `Docs: Added development log entries 1-3` |
 | 6 | Reflection and answers | `Docs: Completed reflection and technical answers` |
-| 7 | Video link | `Docs: Added demo video link` |
+| 7 | Video link | `[Docs: Added demo video link](https://drive.google.com/file/d/1GY_HrxhPIYIadhELFSZ7Cw_4rVKzUWSM/view?usp=sharing)` |
+https://drive.google.com/file/d/1GY_HrxhPIYIadhELFSZ7Cw_4rVKzUWSM/view?usp=sharing
 
 **Rules:**
 - ✅ **One commit per feature.** Do not put all three features in one commit.
