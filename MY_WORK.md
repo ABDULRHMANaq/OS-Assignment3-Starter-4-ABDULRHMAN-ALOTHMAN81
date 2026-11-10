@@ -34,7 +34,7 @@
 |-------|-------------|
 | **Full Name** | [ABDULRHMAN ALOTHMAN] |
 | **Student ID** | [445050148] |
-| **University Email** | [yourid]@std.psau.edu.sa |
+| **University Email** | [445050148]@std.psau.edu.sa |
 | **GitHub Username** | [your-github-username] |
 | **Repository Link** | [Paste your repository link here] |
  
